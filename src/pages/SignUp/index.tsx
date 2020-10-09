@@ -8,7 +8,7 @@ import getValidationErrors from '../../utils/getValidationErrors';
 
 import LogoImg from '../../assets/logo.svg';
 
-import { Container, Content, Background } from './styles';
+import { Container, Content, Background, AnimationContainer } from './styles';
 import Button from '../../components/Button';
 import Input from '../../components/Input';
 
@@ -35,29 +35,31 @@ const SignUp: React.FC = () => {
   return (
     <Container>
       <Background />
-      <Content>
-        <img src={LogoImg} alt="GoBarber" />
+      <AnimationContainer>
+        <Content>
+          <img src={LogoImg} alt="GoBarber" />
 
-        <Form ref={formRef} onSubmit={handleSubmit}>
-          <h1>Faça seu cadastro</h1>
+          <Form ref={formRef} onSubmit={handleSubmit}>
+            <h1>Faça seu cadastro</h1>
 
-          <Input name="name" placeholder="Nome" icon={FiUser} />
-          <Input name="email" placeholder="E-mail" icon={FiMail} />
-          <Input
-            name="password"
-            type="password"
-            placeholder="Senha"
-            icon={FiLock}
-          />
+            <Input name="name" placeholder="Nome" icon={FiUser} />
+            <Input name="email" placeholder="E-mail" icon={FiMail} />
+            <Input
+              name="password"
+              type="password"
+              placeholder="Senha"
+              icon={FiLock}
+            />
 
-          <Button type="submit">Cadastrar</Button>
-        </Form>
+            <Button type="submit">Cadastrar</Button>
+          </Form>
 
-        <Link to="/">
-          <FiArrowLeft />
-          Voltar para login
-        </Link>
-      </Content>
+          <Link to="/">
+            <FiArrowLeft />
+            Voltar para login
+          </Link>
+        </Content>
+      </AnimationContainer>
     </Container>
   );
 };
