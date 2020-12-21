@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { FiClock, FiPower } from 'react-icons/fi';
 import {
@@ -10,12 +10,15 @@ import {
   Schedule,
   Calendar,
   NextAppointments,
+  Section,
+  Appointment,
 } from './styles';
 
 import logoImg from '../../assets/logo.svg';
 import { useAuth } from '../../hooks/auth';
 
 const Dashboard: React.FC = () => {
+  const [selectedDate, setSelectedDate] = useState(new Date());
   const { signOut, user } = useAuth();
 
   return (
@@ -62,6 +65,59 @@ const Dashboard: React.FC = () => {
               </span>
             </div>
           </NextAppointments>
+
+          <Section>
+            <strong>Manhã</strong>
+
+            <Appointment>
+              <span>
+                <FiClock />
+                08:00
+              </span>
+
+              <div>
+                <img
+                  src="https://avatars2.githubusercontent.com/u/65914504?s=460&u=4e7a3c23745091f3bcb29082ca2c61abf5d49be6&v=4"
+                  alt="Fabricyo"
+                />
+                <strong>Fabricyo Barreto</strong>
+              </div>
+            </Appointment>
+
+            <Appointment>
+              <span>
+                <FiClock />
+                08:00
+              </span>
+
+              <div>
+                <img
+                  src="https://avatars2.githubusercontent.com/u/65914504?s=460&u=4e7a3c23745091f3bcb29082ca2c61abf5d49be6&v=4"
+                  alt="Fabricyo"
+                />
+                <strong>Fabricyo Barreto</strong>
+              </div>
+            </Appointment>
+          </Section>
+
+          <Section>
+            <strong>Tarde</strong>
+
+            <Appointment>
+              <span>
+                <FiClock />
+                08:00
+              </span>
+
+              <div>
+                <img
+                  src="https://avatars2.githubusercontent.com/u/65914504?s=460&u=4e7a3c23745091f3bcb29082ca2c61abf5d49be6&v=4"
+                  alt="Fabricyo"
+                />
+                <strong>Fabricyo Barreto</strong>
+              </div>
+            </Appointment>
+          </Section>
         </Schedule>
         <Calendar />
       </Content>
