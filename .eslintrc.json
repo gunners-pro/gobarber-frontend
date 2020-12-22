@@ -36,6 +36,7 @@
     "no-unused-expressions": "off",
     "react/jsx-props-no-spreading": "off",
     "@typescript-eslint/ban-types": "off",
+    "import/no-duplicates": "off",
     "react/jsx-filename-extension": [
       1,
       {
